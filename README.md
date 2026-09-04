@@ -12,6 +12,9 @@ configuration for Grafana.
 ## Wodby stacks using this service
 
 - [Grafana application stack](https://github.com/wodby/stack-grafana)
+- [Grafana Loki application stack](https://github.com/wodby/stack-loki)
+- [Prometheus application stack](https://github.com/wodby/stack-prometheus)
+- [VictoriaMetrics application stack](https://github.com/wodby/stack-victoria-metrics)
 
 ## Service overview
 
@@ -23,19 +26,26 @@ configuration for Grafana.
 | Workloads | `main` (Statefulset, primary) |
 | Containers | `grafana` using `grafana/grafana` |
 | Endpoints | `grafana`: HTTP 3000 (main) |
-| Service links | None |
+| Service links | Grafana Loki (`loki`), Prometheus (`prometheus`), VictoriaMetrics (`victoria-metrics`), optional |
 | Application build | Not buildable from application source |
 | Helm | chart `oci://registry-1.docker.io/wodby/stateful`; version `0.2.0` |
-| Configuration and operations | 1 volumes |
+| Configuration and operations | 1 configuration files, 1 volumes |
 
 ## Use this service
 
-Use this service through [Grafana application stack](https://github.com/wodby/stack-grafana), or reference `grafana` from a
-custom Wodby stack.
+Use this service through one of the Wodby application stacks listed above, or
+reference `grafana` from a custom Wodby stack.
 
 A service is a reusable component and does not deploy by itself. The stack
 defines its links, settings, versions, resources, and relationship to the rest
 of the application.
+
+## Datasource provisioning
+
+The service exposes optional `loki`, `prometheus`, and `victoria-metrics`
+links and a neutral `datasources` config. Stacks can override that config to
+provision linked data sources without changing the standalone Grafana
+experience.
 
 ## Maintain a custom version
 

@@ -43,6 +43,26 @@ env:
 - name: GF_ANALYTICS_CHECK_FOR_UPDATES
   value: 'false'
 
+links:
+- name: loki
+  title: Grafana Loki
+  selectors:
+  - type: service
+    labels:
+    - loki
+- name: prometheus
+  title: Prometheus
+  selectors:
+  - type: service
+    labels:
+    - prometheus
+- name: victoria-metrics
+  title: VictoriaMetrics
+  selectors:
+  - type: service
+    labels:
+    - victoria-metrics
+
 volumes:
 - name: data
   title: Grafana data
@@ -56,6 +76,16 @@ volumes:
       value: '{{volumes.data.claim}}'
     - name: persistence.size
       value: '{{volumes.data.size}}Gi'
+
+configs:
+- name: datasources
+  title: Grafana datasources
+  configContent: |
+    apiVersion: 1
+    prune: true
+    datasources: []
+  processTokens: true
+  filepath: /etc/grafana/provisioning/datasources/wodby.yml
 
 helm:
   name: wodby
