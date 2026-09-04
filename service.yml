@@ -50,6 +50,18 @@ links:
   - type: service
     labels:
     - loki
+- name: prometheus
+  title: Prometheus
+  selectors:
+  - type: service
+    labels:
+    - prometheus
+- name: victoria-metrics
+  title: VictoriaMetrics
+  selectors:
+  - type: service
+    labels:
+    - victoria-metrics
 
 volumes:
 - name: data
