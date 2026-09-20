@@ -11,7 +11,7 @@ labels:
 
 options:
 - version: '13.2'
-  tag: '13.2.1'
+  tag: '13.2.2'
   default: true
 
   eol: '2027-05-18T00:00:00+00:00'
