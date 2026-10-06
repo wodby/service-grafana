@@ -1,5 +1,6 @@
 name: grafana
 title: Grafana
+guidance: GUIDANCE.md
 icon: grafana
 type: service
 scalable: false
