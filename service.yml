@@ -39,7 +39,7 @@ env:
   value: '{{admin_password}}'
   secret: true
 - name: GF_SERVER_ROOT_URL
-  value: '{{service.url}}'
+  value: '{{service.primaryURL}}'
 - name: GF_ANALYTICS_REPORTING_ENABLED
   value: 'false'
 - name: GF_ANALYTICS_CHECK_FOR_UPDATES
