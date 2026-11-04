@@ -12,7 +12,7 @@ What Wodby sets up for Grafana on this service. It runs from the official `grafa
 
 The service can be linked to Grafana Loki, Grafana Tempo, Prometheus and VictoriaMetrics. The links set no variables and create no data source by themselves.
 
-Data sources are declared in the config file "Grafana datasources", mounted at `/etc/grafana/provisioning/datasources/wodby.yml`. It is empty by default (`datasources: []`) and has `prune: true`: a data source removed from the file is deleted from Grafana on the next start. A linked service is reached at `http://<its service name>:<its port>`, for example port 3100 for Loki, 3200 for Tempo and 8428 for VictoriaMetrics. Grafana reads the file only when it starts, and Wodby does not restart Grafana when only this file changes: after a change, deploy the service with force deployment.
+Data sources are declared in the config file "Grafana datasources", mounted at `/etc/grafana/provisioning/datasources/wodby.yml`. It is empty by default (`datasources: []`) and has `prune: true`: a data source removed from the file is deleted from Grafana on the next start. A linked service is reached at `http://<its service name>:<its port>`, for example port 3100 for Loki, 3200 for Tempo and 8428 for VictoriaMetrics. Grafana reads the file only when it starts: after a change, deploy the service with force deployment so it restarts.
 
 ## Changing configuration
 
