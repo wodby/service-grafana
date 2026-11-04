@@ -64,6 +64,12 @@ links:
   - type: service
     labels:
     - victoria-metrics
+- name: tempo
+  title: Grafana Tempo
+  selectors:
+  - type: service
+    labels:
+    - tempo
 
 volumes:
 - name: data

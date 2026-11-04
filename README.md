@@ -13,6 +13,7 @@ configuration for Grafana.
 
 - [Grafana application stack](https://github.com/wodby/stack-grafana)
 - [Grafana Loki application stack](https://github.com/wodby/stack-loki)
+- [Grafana Tempo application stack](https://github.com/wodby/stack-tempo)
 - [Prometheus application stack](https://github.com/wodby/stack-prometheus)
 - [VictoriaMetrics application stack](https://github.com/wodby/stack-victoria-metrics)
 
@@ -26,7 +27,7 @@ configuration for Grafana.
 | Workloads | `main` (Statefulset, primary) |
 | Containers | `grafana` using `grafana/grafana` |
 | Endpoints | `grafana`: HTTP 3000 (main) |
-| Service links | Grafana Loki (`loki`), Prometheus (`prometheus`), VictoriaMetrics (`victoria-metrics`), optional |
+| Service links | Grafana Loki (`loki`), Prometheus (`prometheus`), VictoriaMetrics (`victoria-metrics`), Grafana Tempo (`tempo`), optional |
 | Application build | Not buildable from application source |
 | Helm | chart `oci://registry-1.docker.io/wodby/stateful`; version `0.2.0` |
 | Configuration and operations | 1 configuration files, 1 volumes |
