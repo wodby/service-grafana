@@ -160,6 +160,10 @@ workloads:
   containers:
   - name: grafana
     image: grafana/grafana
+    resources:
+      request:
+        cpu: 80
+        memory: 304
     helm:
       resources: resources
       env: envVars
