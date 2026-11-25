@@ -12,8 +12,8 @@ labels:
 
 options:
 - version: '13.2'
-  tag: '13.2.6'
-  digest: sha256:b21409d7951ddcfd63a4b49083e4ef2cc35bc1437d071813bf82bfb238b00bca
+  tag: '13.2.7'
+  digest: sha256:9fd7619deb8923fc422f2183c3f82fc8dc2f668fd2b54b087336f597cfd92b0d
   default: true
 
   eol: '2027-05-18T00:00:00+00:00'
